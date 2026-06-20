@@ -1,0 +1,32 @@
+{
+  "name": "screentime-recoder",
+  "version": "1.0.0",
+  "description": "Screen time tracking application with AI categorization",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "nodemon server/server.js",
+    "check": "node scripts/check-backend.mjs",
+    "build": "npm run check && npm run build:client && npm run build:extension",
+    "build:client": "npm --prefix client run build",
+    "build:extension": "node scripts/build-extension.mjs"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "groq-sdk": "^0.8.0",
+    "axios": "^1.10.0",
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "express-session": "^1.18.1",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.16.0",
+    "nodemon": "^3.1.10",
+    "passport": "^0.7.0",
+    "passport-google-oauth20": "^2.0.0"
+  }
+}
