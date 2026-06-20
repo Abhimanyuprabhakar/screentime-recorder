@@ -43,14 +43,9 @@ const EXTENSION_CONFIG = {
   ]
 };
 
-// Environment detection — checks if local backend is reachable
+// Environment detection — force production for Vercel deployment
 function detectEnvironment() {
-  return fetch("http://127.0.0.1:3000/api/health", {
-    method: "GET",
-    signal: AbortSignal.timeout(2000)
-  })
-    .then(response => (response.ok ? "development" : "production"))
-    .catch(() => "production");
+  return Promise.resolve("production");
 }
 
 // Get backend URL based on environment
