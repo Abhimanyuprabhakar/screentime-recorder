@@ -349,16 +349,16 @@ export const getCategoryAnalytics = async (req, res) => {
     let groupByFormat;
     switch (period) {
       case "hour":
-        groupByFormat = { $dateToString: { format: "%Y-%m-%d %H:00", date: "$startTime" } };
+        groupByFormat = { $dateToString: { format: "%Y-%m-%dT%H:00:00Z", date: "$startTime" } };
         break;
       case "week":
         groupByFormat = { $dateToString: { format: "%Y-W%U", date: "$startTime" } };
         break;
       case "month":
-        groupByFormat = { $dateToString: { format: "%Y-%m", date: "$startTime" } };
+        groupByFormat = { $dateToString: { format: "%Y-%m-01T00:00:00Z", date: "$startTime" } };
         break;
       default:
-        groupByFormat = { $dateToString: { format: "%Y-%m-%d", date: "$startTime" } };
+        groupByFormat = { $dateToString: { format: "%Y-%m-%dT00:00:00Z", date: "$startTime" } };
     }
 
     const timePipeline = [

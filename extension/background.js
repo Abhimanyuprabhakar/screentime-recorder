@@ -29,11 +29,17 @@ let activeTabs = new Map();
 let activeTabId = null;
 let isWindowFocused = true;
 let updateInterval = null;
+let blockedDomains = [];
+let blockCheckInterval = null;
 
 // Initialize tracking
 function initializeTracking() {
   updateInterval = setInterval(updateActiveDurations, 30000);
   setInterval(checkForWebAppToken, 60000);
+  
+  // Domain blocking check
+  fetchBlockedDomains();
+  blockCheckInterval = setInterval(fetchBlockedDomains, 60000);
 
   chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
     if (tabs[0]) {
@@ -138,6 +144,10 @@ async function sendToBackend(activity) {
 
 async function startTabTracking(tabId, url, title) {
   if (!url || url.startsWith('chrome://') || url.startsWith('chrome-extension://')) {
+    return;
+  }
+  
+  if (await checkIfBlocked(tabId, url)) {
     return;
   }
 
@@ -250,6 +260,8 @@ async function endTabTracking(tabId, reason = 'close') {
 }
 
 async function handleTabActivated(newTabId, url, title) {
+  if (await checkIfBlocked(newTabId, url)) return;
+
   if (activeTabId && activeTabId !== newTabId) {
     await updateTabDuration(activeTabId, Date.now() - (activeTabs.get(activeTabId)?.lastUpdate || Date.now()));
   }
@@ -262,6 +274,68 @@ async function handleTabActivated(newTabId, url, title) {
     const tabData = activeTabs.get(newTabId);
     tabData.lastUpdate = Date.now();
   }
+}
+
+// Blocked Domains Logic
+async function fetchBlockedDomains() {
+  try {
+    const { token } = await chrome.storage.local.get(["token"]);
+    if (!token) return;
+
+    const apiUrl = EXTENSION_CONFIG.API_URL || 'http://127.0.0.1:3000';
+    const response = await fetch(`${apiUrl}/api/reminders/blocked-domains`, {
+      headers: { Authorization: `Bearer ${token}` }
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+      if (data.success) {
+        blockedDomains = data.data || [];
+        // Immediately check active tabs against new block list
+        const tabs = await chrome.tabs.query({});
+        for (const tab of tabs) {
+          checkIfBlocked(tab.id, tab.url);
+        }
+      }
+    }
+  } catch (error) {
+    console.error("Error fetching blocked domains:", error);
+  }
+}
+
+async function checkIfBlocked(tabId, url) {
+  if (!url || url.startsWith('chrome://') || url.startsWith('chrome-extension://')) return false;
+  
+  try {
+    const hostname = new URL(url).hostname;
+    const now = new Date();
+
+    const matchedBlock = blockedDomains.find(block => {
+      // Check if domain matches
+      const domainMatch = hostname === block.domain || hostname.endsWith(`.${block.domain}`);
+      if (!domainMatch) return false;
+
+      // Check if block is active
+      const blockedUntil = new Date(block.blockedUntil);
+      return now < blockedUntil;
+    });
+
+    if (matchedBlock) {
+      console.log(`Domain ${hostname} is blocked! Redirecting...`);
+      const extensionUrl = chrome.runtime.getURL(`blocked.html?domain=${encodeURIComponent(matchedBlock.domain)}&until=${encodeURIComponent(matchedBlock.blockedUntil)}`);
+      
+      // Stop tracking if it was active
+      if (activeTabs.has(tabId)) {
+        await endTabTracking(tabId, 'blocked');
+      }
+
+      await chrome.tabs.update(tabId, { url: extensionUrl });
+      return true;
+    }
+  } catch (e) {
+    // Invalid URL parsing
+  }
+  return false;
 }
 
 async function updateActiveDurations() {
@@ -351,6 +425,8 @@ chrome.tabs.onActivated.addListener(async (activeInfo) => {
 
 chrome.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
   if (changeInfo.url) {
+    if (await checkIfBlocked(tabId, changeInfo.url)) return;
+
     if (activeTabs.has(tabId)) {
       await endTabTracking(tabId, 'navigation');
     }
