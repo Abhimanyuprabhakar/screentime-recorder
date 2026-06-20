@@ -10,7 +10,7 @@ const EXTENSION_CONFIG = {
   API_URL: "https://screentime-recorder.onrender.com",
 
   // Primary frontend URL for opening login/dashboard pages
-  FRONTEND_URL: "https://screentime-recorder.vercel.app",
+  FRONTEND_URL: "https://client-delta-navy-37.vercel.app",
 
   // All frontend URLs for token sync (accept tokens from any of these origins)
   FRONTEND_URLS: [
@@ -18,7 +18,8 @@ const EXTENSION_CONFIG = {
     "http://localhost:5174",
     "http://127.0.0.1:5173",
     "http://127.0.0.1:5174",
-    "https://screentime-recorder.vercel.app"
+    "https://client-delta-navy-37.vercel.app",
+    "https://client-delta-navy-37.vercel.app"
   ],
 
   // Backend configuration by environment

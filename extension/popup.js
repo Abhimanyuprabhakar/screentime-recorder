@@ -1,7 +1,7 @@
 // Get frontend URL from config (production Vercel URL, or 127.0.0.1 for local dev)
 const FRONTEND_URL = (typeof EXTENSION_CONFIG !== 'undefined' && EXTENSION_CONFIG.FRONTEND_URL)
   ? EXTENSION_CONFIG.FRONTEND_URL
-  : 'https://screentime-recorder.vercel.app';
+  : 'https://client-delta-navy-37.vercel.app';
 
 let statusDot, statusText, statusInfo, loginSection, loggedInSection, loginBtn, logoutBtn, dashboardBtn;
 
