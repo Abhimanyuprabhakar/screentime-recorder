@@ -7,7 +7,7 @@ const EXTENSION_CONFIG = {
 
   // Backend API URL — uses production Render URL
   // The extension detects dev locally via health check, but defaults to production
-  API_URL: "https://screentime-recorder.onrender.com",
+  API_URL: "https://screentime-recorder-api.vercel.app",
 
   // Primary frontend URL for opening login/dashboard pages
   FRONTEND_URL: "https://client-delta-navy-37.vercel.app",
@@ -29,7 +29,7 @@ const EXTENSION_CONFIG = {
       apiPath: "/api/activity/log"
     },
     production: {
-      url: "https://screentime-recorder.onrender.com",
+      url: "https://screentime-recorder-api.vercel.app",
       apiPath: "/api/activity/log"
     }
   },
@@ -38,8 +38,8 @@ const EXTENSION_CONFIG = {
   ALLOWED_HOSTNAMES: [
     "localhost",
     "127.0.0.1",
-    "screentime-recorder.vercel.app",
-    "screentime-recorder.onrender.com"
+    "client-delta-navy-37.vercel.app",
+    "screentime-recorder-api.vercel.app"
   ]
 };
 

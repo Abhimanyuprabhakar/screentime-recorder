@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server/server.js",
-    "dev": "nodemon server/server.js",
+    "dev": "LOCAL_DEV=true nodemon server/server.js",
     "check": "node scripts/check-backend.mjs",
     "build": "npm run check && npm run build:client && npm run build:extension",
     "build:client": "npm --prefix client run build",

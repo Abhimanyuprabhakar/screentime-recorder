@@ -43,3 +43,4 @@ server/clear-db.js
 # macOS
 .DS_Store
 **/.DS_Store
+.vercel

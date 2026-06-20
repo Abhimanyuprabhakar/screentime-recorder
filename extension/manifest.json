@@ -23,9 +23,9 @@
       "http://localhost:5174/*",
       "http://127.0.0.1:5173/*",
       "http://127.0.0.1:5174/*",
-      "http://localhost:3000/*",
+      "http://127.0.0.1:3000/*",
       "https://client-delta-navy-37.vercel.app/*",
-      "https://screentime-recorder.onrender.com/*"
+      "https://screentime-recorder-api.vercel.app/*"
     ]
   },
   "background": {
