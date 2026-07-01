@@ -1,4 +1,4 @@
-# 🚀 Welcome to the Screentime-Recorder Contribution Guide
+# 🚀 Welcome to the TimeSense AI | AI-Driven Productivity & Screen Analytics Platform Contribution Guide
 
 Hey awesome dev! 🙌  
 Whether you're reporting bugs, refining the UI, adding a cool feature, or just dropping suggestions — you’re helping shape this project into something amazing. Every bit of effort matters. Thanks for stopping by! 🧡
@@ -7,7 +7,7 @@ Whether you're reporting bugs, refining the UI, adding a cool feature, or just d
 
 ## 📖 What’s This Project About?
 
-**Screentime-Recorder** is a desktop app (built with ❤️ for **Mac users**) that monitors how long you're using each application — essentially bringing the mobile "Screen Time" experience to your laptop. 💻📊
+**TimeSense AI | AI-Driven Productivity & Screen Analytics Platform** is a desktop app (built with ❤️ for **Mac users**) that monitors how long you're using each application — essentially bringing the mobile "Screen Time" experience to your laptop. 💻📊
 
 Its core goal?  
 **Empower users to track digital usage, manage time better, and boost productivity.**
@@ -83,6 +83,6 @@ Want to contribute? Awesome! Here's what to do:
 
 ---
 
-✨ Let’s make Screentime-Recorder awesome — one PR at a time.  
+✨ Let’s make TimeSense AI | AI-Driven Productivity & Screen Analytics Platform awesome — one PR at a time.  
 We’re excited to have you on board! 🧑‍💻🚀
 

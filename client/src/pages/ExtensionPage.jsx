@@ -164,7 +164,7 @@ const ExtensionPage = () => {
           </h1>
 
           <p className="text-lg text-gray-400 max-w-2xl mx-auto mb-10">
-            Install the Screentime Recorder extension to automatically monitor
+            Install the TimeSense AI | AI-Driven Productivity & Screen Analytics Platform extension to automatically monitor
             your browsing habits, sync data to your dashboard, and take back
             control of your time.
           </p>

@@ -1,6 +1,6 @@
-# Screen Time Recorder (Backend)
+# TimeSense AI | AI-Driven Productivity & Screen Analytics Platform (Backend)
 
-This is the backend service of **Screen Time Recorder**, a productivity analytics system designed to capture and process screen usage data. It works with the Chrome extension and frontend dashboard to store, analyze, and serve user activity in a privacy-conscious way.
+This is the backend service of **TimeSense AI | AI-Driven Productivity & Screen Analytics Platform**, a productivity analytics system designed to capture and process screen usage data. It works with the Chrome extension and frontend dashboard to store, analyze, and serve user activity in a privacy-conscious way.
 
 ---
 

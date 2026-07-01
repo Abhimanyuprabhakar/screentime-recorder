@@ -16,7 +16,7 @@ const Footer = () => {
        
         <div>
           <h2 className="text-3xl font-extrabold text-green-700 dark:text-green-400 mb-3 tracking-wide">
-            Screentime Recorder
+            TimeSense AI | AI-Driven Productivity & Screen Analytics Platform
           </h2>
           <p className="text-base text-gray-700 dark:text-gray-400 leading-relaxed max-w-xs">
             Helping you understand and improve your digital habits — with privacy-first tools.
@@ -55,7 +55,7 @@ const Footer = () => {
 
      
       <div className="text-center text-sm py-6 text-gray-700 dark:text-gray-500 font-medium">
-        © 2025 Screentime Recorder. All rights reserved.
+        © 2025 TimeSense AI | AI-Driven Productivity & Screen Analytics Platform. All rights reserved.
       </div>
     </footer>
   );

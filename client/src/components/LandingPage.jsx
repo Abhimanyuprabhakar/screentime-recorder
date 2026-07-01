@@ -63,7 +63,7 @@ const LandingPage = () => {
           </h1>
 
           <p className="mt-6 text-lg md:text-xl text-gray-100 max-w-2xl mx-auto">
-            Screentime Recorder helps you understand and improve your digital
+            TimeSense AI | AI-Driven Productivity & Screen Analytics Platform helps you understand and improve your digital
             habits — with live analytics, goal tracking, and full privacy.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -87,7 +87,7 @@ const LandingPage = () => {
 
       <section className="py-20 px-8 bg-white/10 dark:bg-white/5 mt-16">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900 dark:text-white">
-          What Screentime Recorder Does ?
+          What TimeSense AI | AI-Driven Productivity & Screen Analytics Platform Does ?
         </h2>
         <div className="max-w-4xl mx-auto relative border-l-4 border-green-400 dark:border-green-500 pl-6 space-y-12">
           <FeatureItem

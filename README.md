@@ -1,10 +1,10 @@
-# 📚 Screen Time Recorder
+# 📚 TimeSense AI | AI-Driven Productivity & Screen Analytics Platform
 
 ---
 
 ### 🧠 Project Overview
 
-The **Screen Time Recorder** helps users track and improve their actual study time by analysing screen content. The app runs in the background and uses AI to detect focus, identify difficult topics, and provide contextual support to help users study more effectively.
+The **TimeSense AI | AI-Driven Productivity & Screen Analytics Platform** helps users track and improve their actual study time by analysing screen content. The app runs in the background and uses AI to detect focus, identify difficult topics, and provide contextual support to help users study more effectively.
 
 ---
 
@@ -84,7 +84,7 @@ The **Screen Time Recorder** helps users track and improve their actual study ti
 ### 📁 Project Structure
 
 ```shell
-screentime-recorder/
+TimeSense AI | AI-Driven Productivity & Screen Analytics Platform/
 ├── client/                     # React Frontend (Vite)
 ├── server/                     # Node.js Backend (Express)
 ├── extension/                  # Chrome Extension (Manifest V3)

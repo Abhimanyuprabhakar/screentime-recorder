@@ -1,6 +1,6 @@
-# Screen Time Recorder (Frontend)
+# TimeSense AI | AI-Driven Productivity & Screen Analytics Platform (Frontend)
 
-This is the frontend of **Screen Time Recorder**, a privacy-focused productivity tracker that helps users monitor digital habits and understand how they spend time online. It integrates with a browser extension to automatically log website activity and presents insightful visualizations through a clean and modern dashboard.
+This is the frontend of **TimeSense AI | AI-Driven Productivity & Screen Analytics Platform**, a privacy-focused productivity tracker that helps users monitor digital habits and understand how they spend time online. It integrates with a browser extension to automatically log website activity and presents insightful visualizations through a clean and modern dashboard.
 
 
 ---

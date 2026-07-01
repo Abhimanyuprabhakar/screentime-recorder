@@ -1,6 +1,6 @@
 # Google OAuth Integration Setup Guide
 
-This guide will help you set up Google OAuth authentication for your Screentime Recorder application.
+This guide will help you set up Google OAuth authentication for your TimeSense AI | AI-Driven Productivity & Screen Analytics Platform application.
 
 ## Quick Start
 
